@@ -8,6 +8,12 @@
  */
 class Jvs_MinTotalQty_Model_Observer extends Mage_CatalogInventory_Helper_Minsaleqty
 {
+    /**
+     * Check minimun order totals
+     *
+     * @param  Varien_Event_Observer $observer
+     * @return void
+     */
     public function checkTotalQtyBeforeCheckout(Varien_Event_Observer $observer)
     {
         $quote    = $observer->getDataObject();
