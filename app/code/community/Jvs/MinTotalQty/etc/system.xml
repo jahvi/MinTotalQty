@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <cataloginventory>
+            <groups>
+                <item_options>
+                    <fields>
+                        <min_total_qty translate="label">
+                            <label>Minimum Qty Total Allowed in Shopping Cart</label>
+                            <frontend_model>cataloginventory/adminhtml_form_field_minsaleqty</frontend_model>
+                            <backend_model>cataloginventory/system_config_backend_minsaleqty</backend_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                       </min_total_qty>
+                    </fields>
+                </item_options>
+            </groups>
+        </cataloginventory>
+    </sections>
+</config>

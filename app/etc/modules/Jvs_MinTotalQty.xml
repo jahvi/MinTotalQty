@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Jvs_MinTotalQty>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Jvs_MinTotalQty>
+        <depends>
+            <Mage_CatalogInventory/>
+        </depends>
+    </modules>
+</config>

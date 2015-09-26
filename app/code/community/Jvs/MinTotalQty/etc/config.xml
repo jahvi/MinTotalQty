@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Jvs_MinTotalQty>
+            <version>1.0.0</version>
+        </Jvs_MinTotalQty>
+    </modules>
+    <global>
+        <models>
+            <jvs_mintotalqty>
+                <class>Jvs_MinTotalQty_Model</class>
+            </jvs_mintotalqty>
+        </models>
+        <helpers>
+            <jvs_mintotalqty>
+                <class>Jvs_MinTotalQty_Helper</class>
+            </jvs_mintotalqty>
+        </helpers>
+    </global>
+    <frontend>
+        <events>
+            <sales_quote_save_after>
+                <observers>
+                    <jvs_mintotalqty_checkqty>
+                        <class>jvs_mintotalqty/observer</class>
+                        <method>checkTotalQtyBeforeCheckout</method>
+                    </jvs_mintotalqty_checkqty>
+                </observers>
+            </sales_quote_save_after>
+        </events>
+    </frontend>
+</config>
