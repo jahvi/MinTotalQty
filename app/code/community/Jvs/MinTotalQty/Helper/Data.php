@@ -48,8 +48,7 @@ class Jvs_MinTotalQty_Helper_Data extends Mage_CatalogInventory_Helper_Minsaleqt
      */
     public function minimunOrderQty(Mage_Sales_Model_Quote $quote, Mage_Customer_Model_Customer $customer)
     {
-        $minQtyForCustomer = Mage::helper('jvs_mintotalqty')
-                                ->getConfigValue($customer->getGroupId());
+        $minQtyForCustomer = $this->getConfigValue($customer->getGroupId());
 
         if ($quote->getItemsQty() < $minQtyForCustomer && $quote->getItemsQty() !== 0) {
             return $minQtyForCustomer;
