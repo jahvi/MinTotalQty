@@ -8,7 +8,7 @@
  */
 class Jvs_MinTotalQty_Helper_Data extends Mage_CatalogInventory_Helper_Minsaleqty
 {
-    const XML_PATH_MIN_TOTAL_QTY = 'cataloginventory/item_options/min_total_qty';
+    const XML_PATH_MIN_TOTAL_QTY = 'cataloginventory/options/min_total_qty';
 
     /**
      * Retrieve min_total_qty value from config
