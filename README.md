@@ -1,2 +1,2 @@
 # MinTotalQty
-Magento module to set a minimum order total quantities per customer group
+Magento module to set minimum order total quantities per customer group
