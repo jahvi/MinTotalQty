@@ -6,7 +6,7 @@
  * @package  Jvs_MinTotalQty
  * @author   Javier Villanueva <javiervd@gmail.com>
  */
-class Jvs_MinTotalQty_Model_Observer extends Mage_CatalogInventory_Helper_Minsaleqty
+class Jvs_MinTotalQty_Model_Observer
 {
     /**
      * Check minimun order totals
