@@ -9,14 +9,20 @@
 class Jvs_MinTotalQty_Model_Observer
 {
     /**
-     * Check minimun order totals
+     * Check minimun order totals and redirect if
+     * they do not meet the minimum required
      *
      * @param  Varien_Event_Observer $observer
      * @return void
      */
-    public function checkTotalQtyBeforeCheckout(Varien_Event_Observer $observer)
+    public function redirectToCartWhenQuantityNotMet(Varien_Event_Observer $observer)
     {
-        $quote    = $observer->getDataObject();
+        // Skip check if cart is empty
+        if (Mage::helper('checkout/cart')->getItemsCount() == 0) {
+            return;
+        }
+
+        $quote    = Mage::getSingleton('checkout/session')->getQuote();
         $customer = Mage::helper('customer')->getCustomer();
 
         // If the minimun total quantity is not met
@@ -33,7 +39,7 @@ class Jvs_MinTotalQty_Model_Observer
                     )
             );
 
-            // Check if we are not already on the cart page
+            // Check if not already on the cart page
             if (!Mage::helper('jvs_mintotalqty')->isCartPage()) {
                 Mage::app()->getFrontController()->getResponse()
                     ->setRedirect(Mage::getUrl('checkout/cart'));

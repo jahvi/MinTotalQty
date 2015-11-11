@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Jvs_MinTotalQty>
-            <version>1.0.0</version>
+            <version>2.0.0</version>
         </Jvs_MinTotalQty>
     </modules>
     <global>
@@ -19,14 +19,30 @@
     </global>
     <frontend>
         <events>
-            <sales_quote_save_after>
+            <controller_action_predispatch_checkout>
                 <observers>
                     <jvs_mintotalqty_checkqty>
                         <class>jvs_mintotalqty/observer</class>
-                        <method>checkTotalQtyBeforeCheckout</method>
+                        <method>redirectToCartWhenQuantityNotMet</method>
                     </jvs_mintotalqty_checkqty>
                 </observers>
-            </sales_quote_save_after>
+            </controller_action_predispatch_checkout>
+            <controller_action_predispatch_checkout_cart_index>
+                <observers>
+                    <jvs_mintotalqty_checkqty>
+                        <class>jvs_mintotalqty/observer</class>
+                        <method>redirectToCartWhenQuantityNotMet</method>
+                    </jvs_mintotalqty_checkqty>
+                </observers>
+            </controller_action_predispatch_checkout_cart_index>
+            <controller_action_predispatch_onestepcheckout>
+                <observers>
+                    <jvs_mintotalqty_checkqty>
+                        <class>jvs_mintotalqty/observer</class>
+                        <method>redirectToCartWhenQuantityNotMet</method>
+                    </jvs_mintotalqty_checkqty>
+                </observers>
+            </controller_action_predispatch_onestepcheckout>
         </events>
     </frontend>
 </config>
