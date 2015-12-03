@@ -4,9 +4,9 @@
         <Jvs_MinTotalQty>
             <active>true</active>
             <codePool>community</codePool>
+            <depends>
+                <Mage_CatalogInventory/>
+            </depends>
         </Jvs_MinTotalQty>
-        <depends>
-            <Mage_CatalogInventory/>
-        </depends>
     </modules>
 </config>
